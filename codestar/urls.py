@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path("", include("about.urls"), name="about-urls"),
+    path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path("", include("about.urls"), name="about-urls"),
     path("", include("blog.urls"), name="blog-urls"), # the app urls are loaded as the main urls
     
 ]
