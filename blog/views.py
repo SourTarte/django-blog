@@ -6,7 +6,7 @@ from .models import Post
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "blog/index.html"
-    paginate_by = 9
+    paginate_by = 6
 
 
 def post_detail(request, slug):
@@ -14,10 +14,12 @@ def post_detail(request, slug):
     Display an individual :model:`blog.Post`.
 
     **Context**
+
     ``post``
         An instance of :model:`blog.Post`.
 
     **Template:**
+
     :template:`blog/post_detail.html`
     """
 
